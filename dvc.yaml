@@ -1,0 +1,18 @@
+﻿stages:
+  preprocess:
+    cmd: python src/preprocess_sroie.py
+    deps:
+      - src/preprocess_sroie.py
+      - data/raw/sroie/0325updated.task2train(626p)
+    outs:
+      - data/processed/sroie_cleaned.csv
+
+  split:
+    cmd: python src/split_data.py
+    deps:
+      - src/split_data.py
+      - data/processed/sroie_cleaned.csv
+    outs:
+      - data/splits/train.csv
+      - data/splits/val.csv
+      - data/splits/test.csv
