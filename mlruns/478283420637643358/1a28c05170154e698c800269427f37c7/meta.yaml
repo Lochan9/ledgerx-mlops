@@ -1,0 +1,14 @@
+artifact_uri: file:///content/ledgerx-mlops/mlruns/478283420637643358/1a28c05170154e698c800269427f37c7/artifacts
+end_time: 1761607412106
+entry_point_name: ''
+experiment_id: '478283420637643358'
+lifecycle_stage: active
+run_id: 1a28c05170154e698c800269427f37c7
+run_name: baseline_rf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761607403481
+status: 3
+tags: []
+user_id: root

@@ -1,0 +1,10 @@
+artifact_location: file:///content/ledgerx-mlops/mlruns/478283420637643358/models/m-856a68362e5a4cf4960ce7e1572f70e6/artifacts
+creation_timestamp: 1761607404113
+experiment_id: '478283420637643358'
+last_updated_timestamp: 1761607412051
+model_id: m-856a68362e5a4cf4960ce7e1572f70e6
+model_type: null
+name: model
+source_run_id: 1a28c05170154e698c800269427f37c7
+status: 2
+status_message: null
