@@ -1,0 +1,36 @@
+augmentation:
+  blur_prob: 0.1
+  brightness_range:
+  - 0.8
+  - 1.2
+  enabled: true
+  noise_prob: 0.1
+  rotation_range:
+  - -5
+  - 5
+data:
+  processed_dir: data/processed
+  raw_dir: data/raw
+  splits_dir: data/splits
+  synthetic_dir: data/synthetic
+pipeline:
+  image_size:
+  - 224
+  - 224
+  random_seed: 42
+  target_dpi: 300
+  test_ratio: 0.15
+  train_ratio: 0.7
+  val_ratio: 0.15
+validation:
+  allowed_formats:
+  - .jpg
+  - .jpeg
+  - .png
+  - .pdf
+  max_image_size:
+  - 5000
+  - 5000
+  min_image_size:
+  - 100
+  - 100

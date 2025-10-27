@@ -1,0 +1,33 @@
+{
+  "dataset_name": "LedgerX Invoice Dataset",
+  "version": "1.0",
+  "created_date": "2025-10-27T20:01:59.109592",
+  "total_documents": 6279,
+  "splits": {
+    "train": {
+      "count": 4395,
+      "percentage": "70.0%"
+    },
+    "validation": {
+      "count": 942,
+      "percentage": "15.0%"
+    },
+    "test": {
+      "count": 942,
+      "percentage": "15.0%"
+    }
+  },
+  "quality_metrics": {
+    "avg_quality_score": 0.6008064555577313,
+    "blur_rate": 1.9907628603280776,
+    "avg_file_size_mb": 0.04066459463173881
+  },
+  "preprocessing": {
+    "target_resolution": [
+      224,
+      224
+    ],
+    "target_dpi": 300,
+    "augmentation_enabled": true
+  }
+}
