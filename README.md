@@ -19,8 +19,8 @@ The pipeline is fully reproducible, container-ready, and version-controlled usin
 ---
 
 ## 📊 Dataset Summary
-- **Total Documents** : 6 279  
-- **Train** : 4 395 (70 %)  
+- **Total Documents** : 6279  
+- **Train** : 4395 (70 %)  
 - **Validation** : 942 (15 %)  
 - **Test** : 942 (15 %)
 
