@@ -7,6 +7,14 @@
 This repository contains the **LedgerX Data Pipeline**, the foundation of our AI-powered invoice-processing MLOps platform.  
 The pipeline is fully reproducible, container-ready, and version-controlled using **Git + DVC**, orchestrated with **Airflow**, validated via **Great Expectations**, and tested using **pytest**.
 
+## Team Members
+- Jash Bhavesh Shah
+- Lochan Enugula
+- Samruddhi Bansod
+- Rutuja Jadhav
+- Nirali Hirpara
+- Deep Bhanushali
+
 ### Core Features
 - 🔄 **Automated data ingestion** from Roboflow datasets  
 - 🧩 **Preprocessing** – resize, normalization, blur detection, checksum generation  
