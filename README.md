@@ -162,8 +162,8 @@ DVC ensures **immutable, shareable dataset states** so anyone can clone the repo
 |-------|--------------:|------------------:|-----------------------:|
 | Data Ingestion | 45.2 | 6279 | 139.0 |
 | Preprocessing | 850.0 | 6279 | 7.38 |
-| Splitting | 8.5 | 6 279 | 738.7 |
-| Validation | 3.2 | 6 279 | 1 962.2 |
+| Splitting | 8.5 | 6279 | 738.7 |
+| Validation | 3.2 | 6279 | 1 962.2 |
 
 > **Insight:** Preprocessing (~850 s) is the bottleneck; planned optimization via multiprocessing.
 
