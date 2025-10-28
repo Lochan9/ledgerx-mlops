@@ -13,10 +13,6 @@ pytesseract==0.3.10
 PyMuPDF==1.23.8
 
 apache-airflow==2.9.2
-# (Optional Airflow Providers if needed)
-# apache-airflow-providers-docker==3.6.0
-# apache-airflow-providers-http==4.7.0
-
 great-expectations==0.18.8
 ydata-profiling==4.6.4
 
