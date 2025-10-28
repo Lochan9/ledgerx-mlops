@@ -1,86 +1,91 @@
-LedgerX – AI-Powered Invoice Intelligence Platform
+# 🧾 LedgerX – AI-Powered Invoice Intelligence Platform  
+### MLOps: Data Pipeline Submission
 
-📘 Overview
+---
 
-This repository contains the LedgerX Data Pipeline, the foundation of our AI-powered invoice-processing MLOps platform.
-The pipeline is fully reproducible, container-ready, and version-controlled using Git + DVC, orchestrated with Airflow, validated via Great Expectations, and tested using pytest.
+## 📘 Overview
+This repository contains the **LedgerX Data Pipeline**, the foundation of our AI-powered invoice-processing MLOps platform.  
+The pipeline is fully reproducible, container-ready, and version-controlled using **Git + DVC**, orchestrated with **Airflow**, validated via **Great Expectations**, and tested using **pytest**.
 
-Core Features
+### Core Features
+- 🔄 **Automated data ingestion** from Roboflow datasets  
+- 🧩 **Preprocessing** – resize, normalization, blur detection, checksum generation  
+- ✅ **Validation** – schema + quality checks using Great Expectations  
+- 🧱 **Data versioning** – tracked with DVC  
+- 🪶 **Airflow orchestration** – 8-stage DAG workflow  
+- 🧪 **Unit testing** – automated pytest suite  
+- ⚙️ **CI/CD** – GitHub Actions integration  
 
-🔄 Automated data ingestion from Roboflow datasets
+---
 
-🧩 Preprocessing – resize, normalization, blur detection, checksum generation
+## 📊 Dataset Summary
+- **Total Documents** : 6 279  
+- **Train** : 4 395 (70 %)  
+- **Validation** : 942 (15 %)  
+- **Test** : 942 (15 %)
 
-✅ Validation – schema + quality checks using Great Expectations
+### 📈 Quality Metrics
+- **Average Quality Score :** 0.601  
+- **Blur Rate :** 1.99 %
 
-🧱 Data versioning – tracked with DVC
+### ⚙️ Components
+- Data ingestion from 2 Roboflow datasets  
+- Preprocessing with quality assessment  
+- Stratified train/val/test splitting  
+- DVC version control  
+- Airflow orchestration  
 
-🪶 Airflow orchestration – 8-stage DAG workflow
+---
 
-🧪 Unit testing – automated pytest suite
+## ⚙️ Environment Setup
 
-⚙️ CI/CD – GitHub Actions integration
-
-📊 Dataset Summary
-
-Total Documents : 6 279
-
-Train : 4 395 (70 %)
-
-Validation : 942 (15 %)
-
-Test : 942 (15 %)
-
-📈 Quality Metrics
-
-Average Quality Score : 0.601
-
-Blur Rate : 1.99 %
-
-⚙️ Components
-
-Data ingestion from 2 Roboflow datasets
-
-Preprocessing with quality assessment
-
-Stratified train/val/test splitting
-
-DVC version control
-
-Airflow orchestration
-
-⚙️ Environment Setup
-1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/Lochan9/ledgerx-mlops.git
 cd ledgerx-mlops
+```
 
-2️⃣ Create & Activate Virtual Environment
+### 2️⃣ Create & Activate Virtual Environment
+```bash
 python -m venv venv
 source venv/bin/activate        # Windows → venv\Scripts\activate
+```
 
-3️⃣ Install Dependencies
+### 3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Configure Roboflow API Key
+### 4️⃣ Configure Roboflow API Key
+```bash
 export ROBOFLOW_API_KEY="your_api_key_here"
+```
 
-🚀 Running the Pipeline
-🧠 Run End-to-End in Python
+---
+
+## 🚀 Running the Pipeline
+
+### 🧠 Run End-to-End in Python
+```bash
 python -c "from src.data_pipeline import DataPipeline; pipeline = DataPipeline(); pipeline.run_pipeline()"
+```
 
-🪶 Run with Airflow
+### 🪶 Run with Airflow
+```bash
 airflow standalone
+```
+Then open [http://localhost:8080](http://localhost:8080) → enable **ledgerx_data_pipeline**.  
+> DAG flow : check → verify → preprocess → split → validate → test → data card → DVC add  
 
-
-Then open http://localhost:8080
- → enable ledgerx_data_pipeline.
-
-DAG flow : check → verify → preprocess → split → validate → test → data card → DVC add
-
-🧪 Run Unit Tests
+### 🧪 Run Unit Tests
+```bash
 pytest -v tests/test_pipeline.py
+```
 
-🗂️ Repository Structure
+---
+
+## 🗂️ Repository Structure
+```
 ledgerx-mlops/
 ├── data/
 │   ├── raw/                     # Roboflow datasets (2 sources)
@@ -122,16 +127,53 @@ ledgerx-mlops/
 ├── requirements.txt              # Python dependencies (pinned)
 ├── pipeline.log                  # Runtime log of data pipeline
 └── README.md                     # Project overview + execution guide
+```
 
-🔁 Reproducibility & DVC Tracking
-Add Data to DVC
+---
+
+## 🔁 Reproducibility & DVC Tracking
+
+### Add Data to DVC
+```bash
 dvc add data/processed
 dvc add data/splits
 git add data/processed.dvc data/splits.dvc .dvc/config .gitignore
 git commit -m "Add DVC tracking for data pipeline"
+```
 
-Restore Versioned Data
+### Restore Versioned Data
+```bash
 dvc pull
+```
 
+DVC ensures **immutable, shareable dataset states** so anyone can clone the repo, pull versioned data, and rerun the pipeline identically.
 
-DVC ensures immutable, shareable dataset states so anyone can clone the repo, pull versioned data, and rerun the pipeline identically.
+---
+
+## 🧩 Validation & Testing
+- **Great Expectations** validates schema, column order, value ranges, and duplicates.  
+- **Pytest** checks config, metadata, and data-split integrity.  
+- **CI/CD** workflow (`.github/workflows/ci-cd.yml`) runs lint + tests + validation on every push.
+
+---
+
+## 🧠 Performance Metrics
+| Stage | Duration (s) | Records Processed | Throughput (records/s) |
+|-------|--------------:|------------------:|-----------------------:|
+| Data Ingestion | 45.2 | 6 279 | 139.0 |
+| Preprocessing | 850.0 | 6 279 | 7.38 |
+| Splitting | 8.5 | 6 279 | 738.7 |
+| Validation | 3.2 | 6 279 | 1 962.2 |
+
+> **Insight:** Preprocessing (~850 s) is the bottleneck; planned optimization via multiprocessing.
+
+---
+
+## 🎯 Reproducibility Summary
+- All parameters in `config/pipeline_config.yaml`  
+- Deterministic splits (`random_seed = 42`)  
+- DVC-tracked datasets  
+- CI/CD ensures consistent runs across environments  
+
+---
+
