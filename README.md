@@ -1,5 +1,5 @@
-🧾 LedgerX – AI-Powered Invoice Intelligence Platform
-MLOps: Data Pipeline Submission
+LedgerX – AI-Powered Invoice Intelligence Platform
+
 📘 Overview
 
 This repository contains the LedgerX Data Pipeline, the foundation of our AI-powered invoice-processing MLOps platform.
