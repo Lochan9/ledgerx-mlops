@@ -160,8 +160,8 @@ DVC ensures **immutable, shareable dataset states** so anyone can clone the repo
 ## 🧠 Performance Metrics
 | Stage | Duration (s) | Records Processed | Throughput (records/s) |
 |-------|--------------:|------------------:|-----------------------:|
-| Data Ingestion | 45.2 | 6 279 | 139.0 |
-| Preprocessing | 850.0 | 6 279 | 7.38 |
+| Data Ingestion | 45.2 | 6279 | 139.0 |
+| Preprocessing | 850.0 | 6279 | 7.38 |
 | Splitting | 8.5 | 6 279 | 738.7 |
 | Validation | 3.2 | 6 279 | 1 962.2 |
 
