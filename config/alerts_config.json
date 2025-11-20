@@ -1,0 +1,14 @@
+{
+  "email": {
+    "enabled": true
+  },
+  "slack": {
+    "enabled": true
+  },
+  "thresholds": {
+    "quality_score_min": 0.5,
+    "blur_rate_max": 0.1,
+    "missing_values_max": 0.05,
+    "duplicate_rate_max": 0.02
+  }
+}
