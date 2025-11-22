@@ -1,0 +1,15 @@
+{
+  "biases": [
+    {
+      "type": "size_bias",
+      "detected": false,
+      "correlation": 0.11655927463984878
+    },
+    {
+      "type": "format_bias",
+      "detected": false,
+      "difference": 0.0
+    }
+  ],
+  "total_biases": 0
+}
